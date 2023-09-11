@@ -106,54 +106,6 @@ define('WP_SITEURL','http://wp-app.local');
 ./export.sh
 ```
 
-### Developing a Theme
 
-Configure the volume to load the theme in the container in the `docker-compose.yml`:
 
-```
-volumes:
-  - ./theme-name/trunk/:/var/www/html/wp-content/themes/theme-name
-```
 
-### Developing a Plugin
-
-Configure the volume to load the plugin in the container in the `docker-compose.yml`:
-
-```
-volumes:
-  - ./plugin-name/trunk/:/var/www/html/wp-content/plugins/plugin-name
-```
-
-### WP CLI
-
-The docker compose configuration also provides a service for using the [WordPress CLI](https://developer.wordpress.org/cli/commands/).
-
-Sample command to install WordPress:
-
-```
-docker-compose run --rm wpcli core install --url=http://localhost --title=test --admin_user=admin --admin_email=test@example.com
-```
-
-Or to list installed plugins:
-
-```
-docker-compose run --rm wpcli plugin list
-```
-
-For an easier usage you may consider adding an alias for the CLI:
-
-```
-alias wp="docker-compose run --rm wpcli"
-```
-
-This way you can use the CLI command above as follows:
-
-```
-wp plugin list
-```
-
-### phpMyAdmin
-
-You can also visit `http://127.0.0.1:8080` to access phpMyAdmin after starting the containers.
-
-The default username is `root`, and the password is the same as supplied in the `.env` file.
