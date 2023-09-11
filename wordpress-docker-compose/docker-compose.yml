@@ -21,7 +21,7 @@ services:
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: "${DB_ROOT_PASSWORD}"
     labels:
-      - traefik.http.routers.wp.rule=Host(`wp.opshub.online`)
+      - traefik.http.routers.wp.rule=Host(`wp.example.com`)
       - traefik.http.routers.wp.tls=true
       - traefik.http.routers.wp.tls.certresolver=lets-encrypt
       - traefik.port=80
@@ -41,7 +41,7 @@ services:
       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
       UPLOAD_LIMIT: 50M
     labels:
-      - traefik.http.routers.pma.rule=Host(`pma.opshub.online`)
+      - traefik.http.routers.pma.rule=Host(`pma.example.com`)
       - traefik.http.routers.pma.tls=true
       - traefik.http.routers.pma.tls.certresolver=lets-encrypt
       - traefik.port=80

@@ -4,7 +4,7 @@
   ]
 
 [http.routers.api]
-  rule = "Host(`dashboard.opshub.online`)"
+  rule = "Host(`dashboard.example.com`)"
   entrypoints = ["websecure"]
   middlewares = ["simpleAuth"]
   service = "api@internal"
