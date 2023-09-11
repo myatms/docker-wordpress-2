@@ -27,7 +27,9 @@ When the Traefik container starts, you will add it to this network. Then you can
 Next, create an empty file that will hold your Let’s Encrypt information. You’ll share this into the container so Traefik can use it:
 
 *	touch acme.json
+  
 Traefik will only be able to use this file if the root user inside of the container has unique read and write access to it. To do this, lock down the permissions on acme.json so that only the owner of the file has read and write permission.
 
 *	chmod 600 acme.json
+  
 Once the file gets passed to Docker, the owner will automatically change to the root user inside the container.
