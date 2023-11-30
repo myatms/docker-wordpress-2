@@ -4,6 +4,7 @@ docker run -d \
   -v $PWD/traefik.toml:/traefik.toml \
   -v $PWD/traefik_dynamic.toml:/traefik_dynamic.toml \
   -v $PWD/acme.json:/acme.json \
+  -v $PWD/logs:/var/log/traefik \
   -p 80:80 \
   -p 443:443 \
   --network web \
