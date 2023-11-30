@@ -15,6 +15,12 @@
   email ="exmple@gmail.com"
   storage = "acme.json"
   [certificatesResolvers.lets-encrypt.acme.tlsChallenge]
+[log]
+  filePath = "/var/log/traefik/traefik.log"
+  level = "INFO"
+
+[accessLog]
+  filePath = "/var/log/traefik/access.log"
 
 [providers.docker]
   watch = true
